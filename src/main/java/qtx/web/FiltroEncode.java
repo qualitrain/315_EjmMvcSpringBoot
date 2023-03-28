@@ -9,18 +9,18 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
-import org.springframework.util.MimeType;
-import org.springframework.util.MimeTypeUtils;
 
 @WebFilter("/AltaPerro")
 public class FiltroEncode extends HttpFilter implements Filter {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static Logger bitacora = LoggerFactory.getLogger(FiltroEncode.class);
 	public FiltroEncode() {
         super();
