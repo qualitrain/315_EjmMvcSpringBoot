@@ -1,8 +1,14 @@
 <%@page import="java.util.*" %>
 <%@page import="qtx.negocio.servicios.ErrorValidacion" %>
 <%@page import="java.net.URL"%>
+<%@page import="org.slf4j.Logger"%>
+<%@page import="org.slf4j.LoggerFactory"%>
+
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+            
+<%! private Logger bitacora = LoggerFactory.getLogger(this.getClass()); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,6 +117,8 @@ span{
 
 <% 
    String modo = (String)application.getAttribute("modo");
+   bitacora.info("modo:" + modo);
+
    if (modo != null && modo.equalsIgnoreCase("debug")){ 
    %>
    <br>

@@ -1,9 +1,15 @@
 <%@page import="qtx.negocio.conceptos.*" %>
 <%@page import="java.util.*" %>
 <%@page import="qtx.negocio.servicios.ErrorValidacion" %>
+<%@page import="org.slf4j.Logger"%>
+<%@page import="org.slf4j.LoggerFactory"%>
 <%@page import="java.net.URL"%>
+
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+        
+<%! private Logger bitacora = LoggerFactory.getLogger(this.getClass()); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,8 +100,8 @@ span{
 <a href="./regresar">Regresar a menu principal</a>
 
 <% 
-   String modo = (String)application.getAttribute("modo");
-   System.out.println("modo:" + modo);
+   String modo = (String)application.getAttribute("modo");	
+   bitacora.info("modo:" + modo);
    if (modo != null && modo.equalsIgnoreCase("debug")){ 
 %>
    <br>
